@@ -25,7 +25,7 @@ public class HareketKontrol : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Kemerlerinizi Baðlayýn!");
+        //Debug.Log("Kemerlerinizi Baðlayýn!");
     }
 
     // Update is called once per frame

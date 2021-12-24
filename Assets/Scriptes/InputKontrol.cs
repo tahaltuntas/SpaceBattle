@@ -18,7 +18,7 @@ public class InputKontrol : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log(Input.mousePosition);
+           // Debug.Log(Input.mousePosition);
 
             Vector3 position = Input.mousePosition;
             position.z = -Camera.main.transform.position.z;
@@ -26,5 +26,22 @@ public class InputKontrol : MonoBehaviour
 
             Instantiate(asteroidPrefab, position, Quaternion.identity);
         }
+
+        if (Input.GetMouseButton(0))
+        {
+            Debug.Log("Pressed left click");
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            Debug.Log("Pressed right click");
+        }
+
+        if (Input.GetMouseButton(2))
+        {
+            Debug.Log("Pressed middle click");
+        }
+
+       
     }
 }
