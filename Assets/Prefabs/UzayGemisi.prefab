@@ -145,3 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kursunPrefab: {fileID: 6672111013169009257, guid: ee3251a8771d4fe43b30287845340418, type: 3}
+  patlamaPrefab: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}

@@ -19,9 +19,17 @@ public class Kursun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (geriSayimSayaci.Bitti)
+        if (geriSayimSayaci.Bitti) // kurþun uzayda kaybolduktan sonra backgroundda silinmesine saðlar
         {
             Destroy(gameObject);
         }
+    }
+
+     void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Asteroid") // kurþun asteroidi yok ettikten sonra kaybolsun- tag ekleyerek yaptýk
+        {
+            Destroy(gameObject);
+        } 
     }
 }

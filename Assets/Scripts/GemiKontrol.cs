@@ -5,9 +5,12 @@ using UnityEngine;
 public class GemiKontrol : MonoBehaviour
 {
     [SerializeField]
-    GameObject kursunPrefab;
+    GameObject kursunPrefab = default;
+    
+    [SerializeField]
+    GameObject patlamaPrefab = default;
 
-    const float hareketGucu = 10;
+    const float hareketGucu = 6;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +36,20 @@ public class GemiKontrol : MonoBehaviour
         }
         transform.position = position;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))  //space tuþuna bastýðýnda uzay gemimizin 1 birim üstünden ateþleme yapýyor.
         {
             Vector3 kursunPozisyon = gameObject.transform.position;
             kursunPozisyon.y += 1;
             Instantiate(kursunPrefab, kursunPozisyon, Quaternion.identity);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)  
+    {
+        if (col.gameObject.tag =="Asteroid") // gemi asteroid ile temas ettiðinde gemi patlýyor- tag ile gerçekleþtirdik
+        {
+            Instantiate(patlamaPrefab, gameObject.transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

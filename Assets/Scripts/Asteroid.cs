@@ -16,19 +16,21 @@ public class Asteroid : MonoBehaviour
         if (yon < 0.5)
         {
             rb2d.AddForce(new Vector2(Random.Range(-2.5f, -1.0f), Random.Range(-2.5f, -1.0f)), ForceMode2D.Impulse); //asteroidlerin iniþ koordinatý ve hýzlarýný belirliyoruz.
-
+            rb2d.AddTorque(yon * 2.0f); // asteroidler kendi etrafýnda dönüyor
         }
         else
         {
-           rb2d.AddForce(new Vector2(2, -2), ForceMode2D.Impulse);
+            rb2d.AddForce(new Vector2(Random.Range(1.0f, 2.5f), Random.Range(-2.5f, -1.0f)), ForceMode2D.Impulse);
+            rb2d.AddTorque(-yon * 2.0f);
+
         }
-       
+
 
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Kursun")
+        if (col.gameObject.tag == "Kursun") //asteroidler kursun ile temas ettiðinde patlasýn-bunu tag eklereyerek yaptýk.
         {
             Instantiate(patlamaPrefab, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
