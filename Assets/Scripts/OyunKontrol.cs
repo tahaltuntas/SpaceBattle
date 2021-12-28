@@ -16,7 +16,7 @@ public class OyunKontrol : MonoBehaviour
     [SerializeField]
     int zorluk = 1;
     [SerializeField]
-    int carpan = 4;
+    int carpan = 3;
 
     // Start is called before the first frame update
     void Start()
