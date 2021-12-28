@@ -139,8 +139,6 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420033}
   - component: {fileID: 519420037}
-  - component: {fileID: 519420038}
-  - component: {fileID: 519420039}
   - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
@@ -311,35 +309,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd2f7cddece55743bad99b5a39d9e9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4200bd59bf82ae3499a18d3f2e5c7189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uzayGemisiPrefab: {fileID: 5576203213123799734, guid: 8670851d09f4af84e9a13261e43175a4, type: 3}
+  asteroidPrefabs:
+  - {fileID: 142202088468154858, guid: 8c12aff36bdc6b043a56c0994fb749c9, type: 3}
+  - {fileID: 6929180439605705651, guid: 9c05aa9e1a682294cb18cadf5d742c6b, type: 3}
+  - {fileID: 226732133474511569, guid: 85f64e01eb105ed438a07cca82c2cbea, type: 3}
 --- !u!114 &519420037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a4f03f901907c43a27e04af081cfd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &519420038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e7f601464e6b41489c785600d864602, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: 142202088468154858, guid: 8c12aff36bdc6b043a56c0994fb749c9, type: 3}
---- !u!114 &519420039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,7 +326,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd5f94f5898f5a44da6e34821f347461, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fd2f7cddece55743bad99b5a39d9e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: 142202088468154858, guid: 8c12aff36bdc6b043a56c0994fb749c9, type: 3}

@@ -13,8 +13,6 @@ public class YokEdici : MonoBehaviour
     void Start()
     {
         yokEdiciGeriSayim = gameObject.AddComponent<GeriSayimSayici>();  
-        yokEdiciGeriSayim.ToplamSure = Random.Range(1,20);
-        yokEdiciGeriSayim.Calistir();
     }
 
     // Update is called once per frame
@@ -25,5 +23,11 @@ public class YokEdici : MonoBehaviour
             Instantiate(patlamaPrefab, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+    }
+
+    public void AsteroidYokEdici(int sure)
+    {
+        yokEdiciGeriSayim.ToplamSure = sure;
+        yokEdiciGeriSayim.Calistir();
     }
 }

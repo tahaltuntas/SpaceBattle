@@ -13,8 +13,8 @@ public class HareketKontrol : MonoBehaviour
     {
         
 
-        // Uzay Gemisini Hareket Ettir
-        // GetComponent<Rigidbody2D>().AddForce(new Vector2(5, 5), ForceMode2D.Impulse);
+        // Oyun objesini rastgele bir kuvvet ile hareket ettir.
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-5,5), Random.Range(-5,5)), ForceMode2D.Impulse);
        
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
 
@@ -32,11 +32,11 @@ public class HareketKontrol : MonoBehaviour
     void Update()
     {
         //Ateroid mouse imlecini takip edecek
-        Vector3 position = Input.mousePosition;
-        position.z = -Camera.main.transform.position.z;
-        position = Camera.main.ScreenToWorldPoint(position);
-        transform.position = position;
-        EkrandaKal();
+        //Vector3 position = Input.mousePosition;
+        //position.z = -Camera.main.transform.position.z;
+        //position = Camera.main.ScreenToWorldPoint(position);
+        //transform.position = position;
+        //EkrandaKal();
     }
 
     // objenin oyun ekranýnda kalmasýný saðla
