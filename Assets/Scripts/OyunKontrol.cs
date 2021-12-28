@@ -13,6 +13,11 @@ public class OyunKontrol : MonoBehaviour
     GameObject uzayGemisi;
     List<GameObject> asteroidList = new List<GameObject>(); //ekranda kaçtane asteroid olduðumuzu daha sonrasýnda bilmemiz lazým, ürettiðimiz asteroidler bu listeye
 
+    [SerializeField]
+    int zorluk = 1;
+    [SerializeField]
+    int carpan = 4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +27,7 @@ public class OyunKontrol : MonoBehaviour
         AsteroidUret(5); // asteroiduret metodunu çaðýrýyoruz ve 5 tane metod kurallarýna göre üretiyor.
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
     void AsteroidUret(int adet)
     {
@@ -43,6 +44,16 @@ public class OyunKontrol : MonoBehaviour
             asteroidList.Add(asteroid);
 
 
+        }
+    }
+
+    public void AsteroidYokOldu(GameObject asteroid)
+    {
+        asteroidList.Remove(asteroid);
+        if (asteroidList.Count <= zorluk)
+        {
+            zorluk++;
+            AsteroidUret(zorluk *carpan);
         }
     }
 }

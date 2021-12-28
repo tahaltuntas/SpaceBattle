@@ -7,10 +7,13 @@ public class Asteroid : MonoBehaviour
 
     [SerializeField]
     GameObject patlamaPrefab = default;
+
+    OyunKontrol oyunKontrol;
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody2D rb2d = GetComponent<Rigidbody2D>(); // asteroide kuvvet ekliyoruz
+        oyunKontrol = Camera.main.GetComponent<OyunKontrol>();
 
         float yon = Random.Range(0f, 1.0f); // asteroidin iniþ yönünü random ayarlýyoruz.
         if (yon < 0.5)
@@ -32,6 +35,7 @@ public class Asteroid : MonoBehaviour
     {
         if (col.gameObject.tag == "Kursun") //asteroidler kursun ile temas ettiðinde patlasýn-bunu tag eklereyerek yaptýk.
         {
+            oyunKontrol.AsteroidYokOldu(gameObject);
             Instantiate(patlamaPrefab, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

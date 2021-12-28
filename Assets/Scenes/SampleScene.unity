@@ -317,6 +317,8 @@ MonoBehaviour:
   - {fileID: 142202088468154858, guid: 8c12aff36bdc6b043a56c0994fb749c9, type: 3}
   - {fileID: 6929180439605705651, guid: 9c05aa9e1a682294cb18cadf5d742c6b, type: 3}
   - {fileID: 226732133474511569, guid: 85f64e01eb105ed438a07cca82c2cbea, type: 3}
+  zorluk: 1
+  carpan: 4
 --- !u!114 &519420037
 MonoBehaviour:
   m_ObjectHideFlags: 0
