@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 226732133474511567}
   - component: {fileID: 226732133474511566}
   - component: {fileID: 226732133474511565}
-  - component: {fileID: 335567906266809034}
   - component: {fileID: 8079796915897270034}
   m_Layer: 8
   m_Name: Asteroid3
@@ -133,19 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1616203, y: 1.2336485}
   m_EdgeRadius: 0
---- !u!114 &335567906266809034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226732133474511569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7fb6307ccacaf547b0015ecc2b700da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patlamaPrefab: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
 --- !u!114 &8079796915897270034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,3 +144,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9d4d86a14aaa4499608456b0183a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patlamaPrefab: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
