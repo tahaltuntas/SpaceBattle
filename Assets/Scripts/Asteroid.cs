@@ -36,9 +36,14 @@ public class Asteroid : MonoBehaviour
         if (col.gameObject.tag == "Kursun") //asteroidler kursun ile temas ettiðinde patlasýn-bunu tag eklereyerek yaptýk.
         {
             oyunKontrol.AsteroidYokOldu(gameObject);
-            Instantiate(patlamaPrefab, gameObject.transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            AsteroidYokEt();        
         }
+    }
+
+    public void AsteroidYokEt()
+    {
+        Instantiate(patlamaPrefab, gameObject.transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
 }

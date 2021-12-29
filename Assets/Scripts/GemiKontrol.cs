@@ -10,11 +10,14 @@ public class GemiKontrol : MonoBehaviour
     [SerializeField]
     GameObject patlamaPrefab = default;
 
-    const float hareketGucu = 6;
+    const float hareketGucu = 5;
+
+    OyunKontrol oyunKontrol;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        oyunKontrol = Camera.main.GetComponent<OyunKontrol>();
     }
 
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class GemiKontrol : MonoBehaviour
     {
         if (col.gameObject.tag =="Asteroid") // gemi asteroid ile temas ettiðinde gemi patlýyor- tag ile gerçekleþtirdik
         {
+            oyunKontrol.OyunuBitir();
             Instantiate(patlamaPrefab, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

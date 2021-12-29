@@ -16,7 +16,7 @@ public class Arkaplan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float y = 0.15f * Time.time;
+        float y = 0.1f * Time.time;
         meshRenderer.material.SetTextureOffset("_MainTex", new Vector2(0, y));
     }
 }

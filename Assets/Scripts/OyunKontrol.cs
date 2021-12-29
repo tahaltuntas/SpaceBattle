@@ -18,12 +18,20 @@ public class OyunKontrol : MonoBehaviour
     [SerializeField]
     int carpan = 3;
 
+
+    UIKontrol uikontrol;
+
     // Start is called before the first frame update
     void Start()
     {
-       uzayGemisi =  Instantiate(uzayGemisiPrefab); //uzay gemisinin oluþmasý için instantiate veriyoruz.
-       uzayGemisi.transform.position = new Vector3(0, EkranHesaplayicisi.Alt + 1.5f); // uzay gemisinin baþlangýç konumunu belirliyoruz.
+        uikontrol = GetComponent<UIKontrol>();
+    }
 
+    public void OyunuBaslat()
+    {
+        uikontrol.OyunBasladi();
+        uzayGemisi = Instantiate(uzayGemisiPrefab); //uzay gemisinin oluþmasý için instantiate veriyoruz.
+        uzayGemisi.transform.position = new Vector3(0, EkranHesaplayicisi.Alt + 1.5f); // uzay gemisinin baþlangýç konumunu belirliyoruz.
         AsteroidUret(5); // asteroiduret metodunu çaðýrýyoruz ve 5 tane metod kurallarýna göre üretiyor.
     }
 
@@ -49,11 +57,23 @@ public class OyunKontrol : MonoBehaviour
 
     public void AsteroidYokOldu(GameObject asteroid)
     {
+        uikontrol.AsteroidYokOldu();
         asteroidList.Remove(asteroid);
         if (asteroidList.Count <= zorluk)
         {
             zorluk++;
             AsteroidUret(zorluk *carpan);
         }
+    }
+
+    public void OyunuBitir()
+    {
+        foreach (GameObject asteroid in asteroidList)
+        {
+            asteroid.GetComponent<Asteroid>().AsteroidYokEt();
+        }
+        asteroidList.Clear();
+        zorluk = 1;
+        uikontrol.OyunBitti();
     }
 }
